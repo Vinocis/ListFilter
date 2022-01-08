@@ -7,7 +7,7 @@ defmodule ListFilter do
   defp odd_count([], acc), do: acc
 
   defp odd_count([head | tail], acc) do
-    if is_impar?(head) do
+    if is_odd?(head) do
       odd_count(tail, acc + 1)
     else
       odd_count(tail, acc)
@@ -21,8 +21,8 @@ defmodule ListFilter do
     end
   end
 
-  defp is_impar?(value) do
-    if rem(to_int(value), 2) == 1 do
+  defp is_odd?(value) do
+    if rem(to_int(value), 2) != 0 do
       true
     end
   end
